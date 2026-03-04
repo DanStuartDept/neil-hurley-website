@@ -1,0 +1,10 @@
+{
+  "logo": { "label": "Neil Hurley", "href": "/" },
+  "links": [
+    { "label": "Portfolio", "href": "/" },
+    { "label": "Food", "href": "/food" },
+    { "label": "Advertising", "href": "/advertising" },
+    { "label": "Clients", "href": "/clients" },
+    { "label": "Contact", "href": "/contact" }
+  ]
+}

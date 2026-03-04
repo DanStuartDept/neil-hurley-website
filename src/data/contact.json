@@ -1,0 +1,8 @@
+{
+  "heading": "Let's work together",
+  "details": [
+    { "label": "Phone", "value": "+353 87 672 4862", "href": "tel:+353876724862" },
+    { "label": "Email", "value": "info@neilhurley.com", "href": "mailto:info@neilhurley.com" },
+    { "label": "Location", "value": "Dublin, Ireland" }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "image": {
+      "src": "/images/food/70.jpg",
+      "alt": "Neil Hurley Photography"
+    }
+  },
+  "sections": [
+    {
+      "component": "SectionWithGallery",
+      "props": {
+        "title": "Food & Drink",
+        "viewAllLink": { "label": "View Collection", "href": "/food" },
+        "variant": "asymmetric",
+        "items": [
+          {
+            "id": "food-1",
+            "image": { "src": "/images/food/70.jpg", "alt": "Summer fruit arrangement" },
+            "title": "Summer Fruits",
+            "category": "Food"
+          },
+          {
+            "id": "food-2",
+            "image": { "src": "/images/food/02.jpg", "alt": "Fresh ingredients arrangement" },
+            "title": "Fresh Ingredients",
+            "category": "Food"
+          },
+          {
+            "id": "food-3",
+            "image": { "src": "/images/food/04.jpg", "alt": "Artisan bread selection" },
+            "title": "Artisan Bread",
+            "category": "Food"
+          },
+          {
+            "id": "food-4",
+            "image": { "src": "/images/food/10.jpg", "alt": "Plated fine dining dish" },
+            "title": "Fine Dining",
+            "category": "Food"
+          },
+          {
+            "id": "food-5",
+            "image": { "src": "/images/food/Food-0020-Brown-Thomas-Group-2016.jpg", "alt": "Brown Thomas food collection" },
+            "title": "Brown Thomas Collection",
+            "category": "Food"
+          }
+        ]
+      }
+    },
+    {
+      "component": "SectionWithGallery",
+      "props": {
+        "title": "Advertising & Product",
+        "viewAllLink": { "label": "View Collection", "href": "/advertising" },
+        "variant": "uniform",
+        "items": [
+          {
+            "id": "adv-1",
+            "image": { "src": "/images/advertising/01.jpg", "alt": "Brand campaign hero shot" },
+            "title": "Campaign Hero",
+            "category": "Advertising"
+          },
+          {
+            "id": "adv-2",
+            "image": { "src": "/images/advertising/04.jpg", "alt": "Cosmetics product arrangement" },
+            "title": "Cosmetics Collection",
+            "category": "Product"
+          },
+          {
+            "id": "adv-3",
+            "image": { "src": "/images/advertising/117.jpg", "alt": "Fragrance bottle composition" },
+            "title": "Fragrance Composition",
+            "category": "Product"
+          }
+        ]
+      }
+    },
+    {
+      "component": "SectionWithClients",
+      "props": {
+        "title": "Selected Clients",
+        "viewAllLink": { "label": "View All", "href": "/clients" },
+        "clients": [
+          { "name": "Hermès" },
+          { "name": "Cartier" },
+          { "name": "Chloé" },
+          { "name": "Brown Thomas" },
+          { "name": "Avoca Handweavers" },
+          { "name": "Kellogg's" },
+          { "name": "Pepsi" },
+          { "name": "American Express" }
+        ],
+        "limit": 8
+      }
+    }
+  ]
+}

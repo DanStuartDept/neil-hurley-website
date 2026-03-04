@@ -1,0 +1,206 @@
+{
+  "header": {
+    "title": "Advertising & Product",
+    "description": "Bold imagery for brands that demand attention."
+  },
+  "items": [
+    {
+      "id": "adv-1",
+      "image": { "src": "/images/advertising/01.jpg", "alt": "Brand campaign hero shot" },
+      "title": "Campaign Hero",
+      "category": "Advertising"
+    },
+    {
+      "id": "adv-2",
+      "image": { "src": "/images/advertising/02.jpg", "alt": "Product on white background" },
+      "title": "Clean Product Shot",
+      "category": "Product"
+    },
+    {
+      "id": "adv-3",
+      "image": { "src": "/images/advertising/02a.jpg", "alt": "Product detail variation" },
+      "title": "Product Detail",
+      "category": "Product"
+    },
+    {
+      "id": "adv-4",
+      "image": { "src": "/images/advertising/03.jpg", "alt": "Luxury brand packaging" },
+      "title": "Luxury Packaging",
+      "category": "Advertising"
+    },
+    {
+      "id": "adv-5",
+      "image": { "src": "/images/advertising/04.jpg", "alt": "Cosmetics product arrangement" },
+      "title": "Cosmetics Collection",
+      "category": "Product"
+    },
+    {
+      "id": "adv-6",
+      "image": { "src": "/images/advertising/07.jpg", "alt": "Lifestyle product photography" },
+      "title": "Lifestyle Product",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "adv-7",
+      "image": { "src": "/images/advertising/08.jpg", "alt": "Premium product still life" },
+      "title": "Premium Still Life",
+      "category": "Product"
+    },
+    {
+      "id": "adv-8",
+      "image": { "src": "/images/advertising/10.jpg", "alt": "Editorial product feature" },
+      "title": "Editorial Feature",
+      "category": "Editorial"
+    },
+    {
+      "id": "adv-9",
+      "image": { "src": "/images/advertising/117.jpg", "alt": "Fragrance bottle composition" },
+      "title": "Fragrance Composition",
+      "category": "Product"
+    },
+    {
+      "id": "adv-10",
+      "image": { "src": "/images/advertising/118.jpg", "alt": "Jewellery product shot" },
+      "title": "Jewellery",
+      "category": "Product"
+    },
+    {
+      "id": "adv-11",
+      "image": { "src": "/images/advertising/12.jpg", "alt": "Brand identity photography" },
+      "title": "Brand Identity",
+      "category": "Advertising"
+    },
+    {
+      "id": "adv-12",
+      "image": { "src": "/images/advertising/123.jpg", "alt": "Accessories flat lay" },
+      "title": "Accessories Flat Lay",
+      "category": "Product"
+    },
+    {
+      "id": "adv-13",
+      "image": { "src": "/images/advertising/124.jpg", "alt": "Watch product photography" },
+      "title": "Timepiece",
+      "category": "Product"
+    },
+    {
+      "id": "adv-14",
+      "image": { "src": "/images/advertising/126.jpg", "alt": "Leather goods still life" },
+      "title": "Leather Goods",
+      "category": "Product"
+    },
+    {
+      "id": "adv-15",
+      "image": { "src": "/images/advertising/127.jpg", "alt": "Fashion accessories" },
+      "title": "Fashion Accessories",
+      "category": "Product"
+    },
+    {
+      "id": "adv-16",
+      "image": { "src": "/images/advertising/1281.jpg", "alt": "Designer brand showcase" },
+      "title": "Designer Showcase",
+      "category": "Advertising"
+    },
+    {
+      "id": "adv-17",
+      "image": { "src": "/images/advertising/131.jpg", "alt": "Tabletop product arrangement" },
+      "title": "Tabletop Arrangement",
+      "category": "Product"
+    },
+    {
+      "id": "adv-18",
+      "image": { "src": "/images/advertising/19-08-17-AF-Shot-10.jpg", "alt": "Advertising campaign shot" },
+      "title": "Campaign Shot",
+      "category": "Advertising"
+    },
+    {
+      "id": "adv-19",
+      "image": { "src": "/images/advertising/25.jpg", "alt": "Beverage advertising" },
+      "title": "Beverage Campaign",
+      "category": "Advertising"
+    },
+    {
+      "id": "adv-20",
+      "image": { "src": "/images/advertising/26.jpg", "alt": "Still life with flowers" },
+      "title": "Floral Still Life",
+      "category": "Editorial"
+    },
+    {
+      "id": "adv-21",
+      "image": { "src": "/images/advertising/30.jpg", "alt": "Retail product display" },
+      "title": "Retail Display",
+      "category": "Commercial"
+    },
+    {
+      "id": "adv-22",
+      "image": { "src": "/images/advertising/31-08-17-BTC-Shot-07.jpg", "alt": "Brown Thomas campaign" },
+      "title": "Brown Thomas Campaign",
+      "category": "Advertising"
+    },
+    {
+      "id": "adv-23",
+      "image": { "src": "/images/advertising/49.jpg", "alt": "Product packaging design" },
+      "title": "Packaging Design",
+      "category": "Product"
+    },
+    {
+      "id": "adv-24",
+      "image": { "src": "/images/advertising/50.jpg", "alt": "Ambient product scene" },
+      "title": "Ambient Scene",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "adv-25",
+      "image": { "src": "/images/advertising/59.jpg", "alt": "Studio product lighting" },
+      "title": "Studio Lighting",
+      "category": "Product"
+    },
+    {
+      "id": "adv-26",
+      "image": { "src": "/images/advertising/60.jpg", "alt": "Homeware product shot" },
+      "title": "Homeware",
+      "category": "Product"
+    },
+    {
+      "id": "adv-27",
+      "image": { "src": "/images/advertising/61.jpg", "alt": "Interior accessories" },
+      "title": "Interior Accessories",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "adv-28",
+      "image": { "src": "/images/advertising/64.jpg", "alt": "Gift set photography" },
+      "title": "Gift Set",
+      "category": "Commercial"
+    },
+    {
+      "id": "adv-29",
+      "image": { "src": "/images/advertising/69.jpg", "alt": "Candle and scent products" },
+      "title": "Scent Collection",
+      "category": "Product"
+    },
+    {
+      "id": "adv-30",
+      "image": { "src": "/images/advertising/72.jpg", "alt": "Textured product detail" },
+      "title": "Textured Detail",
+      "category": "Product"
+    },
+    {
+      "id": "adv-31",
+      "image": { "src": "/images/advertising/97.jpg", "alt": "Monochrome product shot" },
+      "title": "Monochrome Study",
+      "category": "Editorial"
+    },
+    {
+      "id": "adv-32",
+      "image": { "src": "/images/advertising/98.jpg", "alt": "Colour product composition" },
+      "title": "Colour Composition",
+      "category": "Editorial"
+    },
+    {
+      "id": "adv-33",
+      "image": { "src": "/images/advertising/Yellow-Black-Amended.jpg", "alt": "Bold graphic product shot" },
+      "title": "Bold Graphic",
+      "category": "Advertising"
+    }
+  ]
+}

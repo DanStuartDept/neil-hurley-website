@@ -1,0 +1,34 @@
+{
+  "header": {
+    "title": "Selected Clients",
+    "description": "Trusted by leading international brands."
+  },
+  "clients": [
+    { "name": "Hermès" },
+    { "name": "Cartier" },
+    { "name": "Chloé" },
+    { "name": "Brown Thomas" },
+    { "name": "Avoca Handweavers" },
+    { "name": "Kellogg's" },
+    { "name": "Pepsi" },
+    { "name": "American Express" },
+    { "name": "Adidas" },
+    { "name": "Flora" },
+    { "name": "BBC" },
+    { "name": "ITV" },
+    { "name": "Channel 4" },
+    { "name": "RTÉ" },
+    { "name": "TodayFM" },
+    { "name": "The Gloss" },
+    { "name": "EuroRSCG" },
+    { "name": "Webfactory" },
+    { "name": "Dubliner Cheese" },
+    { "name": "Boyne Valley" },
+    { "name": "Bfree Foods" },
+    { "name": "Carroll Cuisine" },
+    { "name": "Total Petrol" },
+    { "name": "Mindy Brownes" },
+    { "name": "Caterhire" },
+    { "name": "National Maritime Museum" }
+  ]
+}

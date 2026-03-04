@@ -1,0 +1,140 @@
+{
+  "header": {
+    "title": "Food & Drink",
+    "description": "Crafting appetite through light, texture and composition."
+  },
+  "items": [
+    {
+      "id": "food-1",
+      "image": { "src": "/images/food/02.jpg", "alt": "Fresh ingredients arrangement" },
+      "title": "Fresh Ingredients",
+      "category": "Editorial"
+    },
+    {
+      "id": "food-2",
+      "image": { "src": "/images/food/04.jpg", "alt": "Artisan bread selection" },
+      "title": "Artisan Bread",
+      "category": "Editorial"
+    },
+    {
+      "id": "food-3",
+      "image": { "src": "/images/food/05.jpg", "alt": "Seasonal produce display" },
+      "title": "Seasonal Produce",
+      "category": "Editorial"
+    },
+    {
+      "id": "food-4",
+      "image": { "src": "/images/food/10.jpg", "alt": "Plated fine dining dish" },
+      "title": "Fine Dining",
+      "category": "Restaurant"
+    },
+    {
+      "id": "food-5",
+      "image": { "src": "/images/food/11.jpg", "alt": "Dessert composition" },
+      "title": "Dessert Composition",
+      "category": "Restaurant"
+    },
+    {
+      "id": "food-6",
+      "image": { "src": "/images/food/121.jpg", "alt": "Gourmet cheese selection" },
+      "title": "Gourmet Cheese",
+      "category": "Product"
+    },
+    {
+      "id": "food-7",
+      "image": { "src": "/images/food/14.jpg", "alt": "Cocktail photography" },
+      "title": "Cocktail",
+      "category": "Beverage"
+    },
+    {
+      "id": "food-8",
+      "image": { "src": "/images/food/18.jpg", "alt": "Mediterranean spread" },
+      "title": "Mediterranean Spread",
+      "category": "Editorial"
+    },
+    {
+      "id": "food-9",
+      "image": { "src": "/images/food/19.jpg", "alt": "Pastry close-up" },
+      "title": "Pastry Detail",
+      "category": "Editorial"
+    },
+    {
+      "id": "food-10",
+      "image": { "src": "/images/food/24.jpg", "alt": "Breakfast table setting" },
+      "title": "Breakfast Table",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "food-11",
+      "image": { "src": "/images/food/25.jpg", "alt": "Fresh salad bowl" },
+      "title": "Fresh Salad",
+      "category": "Editorial"
+    },
+    {
+      "id": "food-12",
+      "image": { "src": "/images/food/32.jpg", "alt": "Spice collection" },
+      "title": "Spice Collection",
+      "category": "Product"
+    },
+    {
+      "id": "food-13",
+      "image": { "src": "/images/food/36.jpg", "alt": "Wine and cheese pairing" },
+      "title": "Wine & Cheese",
+      "category": "Beverage"
+    },
+    {
+      "id": "food-14",
+      "image": { "src": "/images/food/47.jpg", "alt": "Rustic kitchen scene" },
+      "title": "Rustic Kitchen",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "food-15",
+      "image": { "src": "/images/food/51.jpg", "alt": "Chocolate dessert" },
+      "title": "Chocolate Indulgence",
+      "category": "Product"
+    },
+    {
+      "id": "food-16",
+      "image": { "src": "/images/food/531.jpg", "alt": "Seafood platter" },
+      "title": "Seafood Platter",
+      "category": "Restaurant"
+    },
+    {
+      "id": "food-17",
+      "image": { "src": "/images/food/70.jpg", "alt": "Summer fruit arrangement" },
+      "title": "Summer Fruits",
+      "category": "Editorial"
+    },
+    {
+      "id": "food-18",
+      "image": { "src": "/images/food/Food-0020-Brown-Thomas-Group-2016.jpg", "alt": "Brown Thomas food group" },
+      "title": "Brown Thomas Collection",
+      "category": "Commercial"
+    },
+    {
+      "id": "food-19",
+      "image": { "src": "/images/food/Food-0030-Brown-Thomas-Group-2016.jpg", "alt": "Brown Thomas food selection" },
+      "title": "Brown Thomas Selection",
+      "category": "Commercial"
+    },
+    {
+      "id": "food-20",
+      "image": { "src": "/images/food/Food-0040-AIL-Group-2016.jpg", "alt": "AIL food group" },
+      "title": "AIL Group",
+      "category": "Commercial"
+    },
+    {
+      "id": "food-21",
+      "image": { "src": "/images/food/Food-0060-Caterhire-2016.jpg", "alt": "Caterhire food presentation" },
+      "title": "Caterhire Presentation",
+      "category": "Commercial"
+    },
+    {
+      "id": "food-22",
+      "image": { "src": "/images/food/Shot-009.jpg", "alt": "Studio food shot" },
+      "title": "Studio Shot",
+      "category": "Editorial"
+    }
+  ]
+}
