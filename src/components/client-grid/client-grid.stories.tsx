@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { ClientGrid } from './client-grid';
 
 const meta: Meta<typeof ClientGrid> = {
