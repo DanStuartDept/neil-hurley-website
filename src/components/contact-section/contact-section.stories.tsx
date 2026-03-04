@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { ContactSection } from './contact-section';
 
 const meta: Meta<typeof ContactSection> = {
