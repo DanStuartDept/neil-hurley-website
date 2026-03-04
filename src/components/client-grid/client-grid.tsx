@@ -10,9 +10,9 @@ export function ClientGrid({ clients }: ClientGridProps) {
       {clients.map((client) => (
         <div
           key={client.name}
-          className="flex items-center justify-center bg-background px-6 py-9 transition-colors duration-300 hover:bg-card hover:text-primary"
+          className="group flex items-center justify-center bg-background px-6 py-9 transition-colors duration-300 hover:bg-card"
         >
-          <span className="text-center font-display text-base text-secondary transition-colors duration-300">
+          <span className="text-center font-display text-base text-secondary transition-colors duration-300 group-hover:text-primary">
             {client.name}
           </span>
         </div>

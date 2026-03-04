@@ -34,7 +34,9 @@ describe('ClientGrid', () => {
     const { container } = render(<ClientGrid clients={clients} />);
     const cell = container.querySelector('.bg-background');
     expect(cell?.className).toContain('hover:bg-card');
-    expect(cell?.className).toContain('hover:text-primary');
+    expect(cell?.className).toContain('group');
+    const span = cell?.querySelector('span');
+    expect(span?.className).toContain('group-hover:text-primary');
   });
 
   it('renders empty grid when no clients', () => {
