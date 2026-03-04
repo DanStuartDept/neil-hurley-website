@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { PageHeader } from './page-header';
 
 const meta: Meta<typeof PageHeader> = {
