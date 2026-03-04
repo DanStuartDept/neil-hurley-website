@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { ClientGrid } from './client-grid';
 
 const meta: Meta<typeof ClientGrid> = {
