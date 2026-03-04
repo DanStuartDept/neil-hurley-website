@@ -1,1 +1,1 @@
-// Component exports will be added in Phase 2
+export { SiteHeader } from './site-header';
