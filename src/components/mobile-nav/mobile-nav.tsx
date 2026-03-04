@@ -48,10 +48,12 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
   useEffect(() => {
     if (isOpen) {
       document.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
       firstLinkRef.current?.focus();
     }
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
     };
   }, [isOpen, handleKeyDown]);
 
