@@ -1,1 +1,2 @@
-// Component exports will be added in Phase 2
+export { GalleryGrid } from './gallery-grid';
+export { GalleryItem } from './gallery-item';
