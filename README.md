@@ -3,7 +3,7 @@
 Portfolio website for Dublin-based still life and product photographer Neil Hurley.
 
 **Design Direction:** Clean White Gallery
-**Stack:** Next.js 15 · Tailwind CSS 4 · TypeScript · Storybook 8 · Vitest
+**Stack:** Next.js 16 · Tailwind CSS 4 · TypeScript · Storybook 10 · Vitest
 
 ## Prerequisites
 

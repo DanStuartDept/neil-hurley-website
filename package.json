@@ -20,13 +20,11 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "8.6.17",
-    "@storybook/addon-interactions": "8.6.17",
-    "@storybook/addon-onboarding": "8.6.17",
-    "@storybook/blocks": "8.6.17",
-    "@storybook/nextjs": "8.6.17",
-    "@storybook/react": "8.6.17",
-    "@storybook/test": "8.6.17",
+    "@chromatic-com/storybook": "^5.0.1",
+    "@storybook/addon-a11y": "^10.2.15",
+    "@storybook/addon-docs": "^10.2.15",
+    "@storybook/addon-onboarding": "^10.2.15",
+    "@storybook/nextjs-vite": "^10.2.15",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -35,14 +33,16 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^5.1.4",
-    "eslint": "^9",
+    "eslint": "^9.39.3",
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-storybook": "^10.2.15",
     "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
-    "storybook": "8.6.17",
+    "storybook": "^10.2.15",
     "tailwindcss": "^4",
     "typescript": "^5",
+    "vite": "^7.3.1",
     "vitest": "^4.0.18"
   }
 }
