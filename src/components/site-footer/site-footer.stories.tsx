@@ -7,6 +7,7 @@ const meta: Meta<typeof SiteFooter> = {
   parameters: {
     layout: 'fullscreen',
   },
+  tags: ['autodocs'],
 };
 
 export default meta;

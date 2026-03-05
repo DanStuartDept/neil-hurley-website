@@ -4,6 +4,7 @@ import { SectionHeader } from './section-header';
 const meta: Meta<typeof SectionHeader> = {
   title: 'Components/SectionHeader',
   component: SectionHeader,
+  tags: ['autodocs'],
 };
 
 export default meta;

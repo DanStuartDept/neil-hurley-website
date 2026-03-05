@@ -4,6 +4,7 @@ import { ContactSection } from './contact-section';
 const meta: Meta<typeof ContactSection> = {
   title: 'Components/ContactSection',
   component: ContactSection,
+  tags: ['autodocs'],
 };
 
 export default meta;

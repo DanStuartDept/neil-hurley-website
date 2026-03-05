@@ -4,6 +4,7 @@ import { ClientGrid } from './client-grid';
 const meta: Meta<typeof ClientGrid> = {
   title: 'Components/ClientGrid',
   component: ClientGrid,
+  tags: ['autodocs'],
 };
 
 export default meta;
