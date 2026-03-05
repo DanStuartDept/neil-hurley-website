@@ -4,13 +4,26 @@ import { useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { GalleryItemType } from '@/components/types';
 
+/**
+ * Props for the Lightbox component.
+ */
 interface LightboxProps {
+  /** Array of gallery items to navigate through. */
   items: GalleryItemType[];
+  /** Index of the currently displayed item. */
   currentIndex: number;
+  /** Callback fired when the lightbox should close. */
   onClose: () => void;
+  /** Callback fired to navigate to a different item by index. */
   onNavigate: (index: number) => void;
 }
 
+/**
+ * Full-screen image lightbox with keyboard navigation and prev/next controls.
+ *
+ * @example
+ * <Lightbox items={items} currentIndex={0} onClose={() => {}} onNavigate={(i) => {}} />
+ */
 export function Lightbox({
   items,
   currentIndex,
@@ -99,6 +112,7 @@ export function Lightbox({
           className="object-contain shadow-[0_8px_24px_rgba(0,0,0,0.1)]"
           sizes="90vw"
           priority
+          quality={90}
         />
       </div>
 
