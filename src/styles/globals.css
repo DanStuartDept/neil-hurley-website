@@ -30,9 +30,7 @@
 
 @layer base {
   body {
-    background-color: var(--color-background);
-    color: var(--color-body-text);
-    -webkit-font-smoothing: antialiased;
+    @apply bg-background text-body-text antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }

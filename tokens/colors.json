@@ -1,0 +1,72 @@
+{
+  "color": {
+    "background": {
+      "default": {
+        "$value": "#f7f5f2",
+        "$type": "color",
+        "$description": "Page background"
+      },
+      "alt": {
+        "$value": "#efece7",
+        "$type": "color",
+        "$description": "Alternate background (section stripes)"
+      },
+      "card": {
+        "$value": "#ffffff",
+        "$type": "color",
+        "$description": "Card / overlay surface"
+      },
+      "surface": {
+        "$value": "#e8e3dc",
+        "$type": "color",
+        "$description": "Raised surface, chips, tags"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "#1a1815",
+        "$type": "color",
+        "$description": "Headings and high-emphasis text"
+      },
+      "body": {
+        "$value": "#3d3a36",
+        "$type": "color",
+        "$description": "Default body copy"
+      },
+      "secondary": {
+        "$value": "#7a756e",
+        "$type": "color",
+        "$description": "Secondary / supporting text"
+      },
+      "muted": {
+        "$value": "#6b6560",
+        "$type": "color",
+        "$description": "Labels, metadata, de-emphasised text"
+      }
+    },
+    "accent": {
+      "default": {
+        "$value": "#8b7355",
+        "$type": "color",
+        "$description": "Primary brand accent (warm tan)"
+      },
+      "hover": {
+        "$value": "#73603f",
+        "$type": "color",
+        "$description": "Accent on hover / pressed"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "#e0dbd4",
+        "$type": "color",
+        "$description": "Standard dividers and input borders"
+      },
+      "light": {
+        "$value": "#ece8e2",
+        "$type": "color",
+        "$description": "Subtle separators"
+      }
+    }
+  }
+}

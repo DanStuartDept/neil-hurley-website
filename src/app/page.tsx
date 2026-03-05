@@ -37,12 +37,15 @@ export default function HomePage() {
       <h1 className="sr-only">Neil Hurley Photography</h1>
       <Hero image={homeData.hero.image} />
 
-      <section className="mx-auto max-w-[1280px] px-6 py-20">
-        <SectionHeader
-          title="Food & Drink"
-          viewAllLink={{ label: 'View Collection', href: '/food' }}
-        />
-        <GalleryGrid items={foodData.items.slice(0, FOOD_PREVIEW_ITEMS)} variant="asymmetric" />
+      
+      <section className="bg-background px-6 py-20">
+        <div className="mx-auto max-w-[1280px]">
+          <SectionHeader
+            title="Food & Drink"
+            viewAllLink={{ label: 'View Collection', href: '/food' }}
+          />
+          <GalleryGrid items={foodData.items.slice(0, FOOD_PREVIEW_ITEMS)} variant="asymmetric" />
+        </div>
       </section>
 
       <section className="bg-background-alt py-20">
@@ -55,12 +58,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1280px] px-6 py-20">
-        <SectionHeader
-          title="Selected Clients"
-          viewAllLink={{ label: 'View All', href: '/clients' }}
-        />
-        <ClientGrid clients={clientsData.clients.slice(0, CLIENTS_PREVIEW_COUNT)} />
+      <section className="bg-background px-6 py-20">
+        <div className="mx-auto max-w-[1280px]">
+          <SectionHeader
+            title="Selected Clients"
+            viewAllLink={{ label: 'View All', href: '/clients' }}
+          />
+          <ClientGrid clients={clientsData.clients.slice(0, CLIENTS_PREVIEW_COUNT)} />
+        </div>
       </section>
 
       <ContactSection

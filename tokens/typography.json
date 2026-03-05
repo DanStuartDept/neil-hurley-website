@@ -1,0 +1,201 @@
+{
+  "font": {
+    "family": {
+      "display": {
+        "$value": "Libre Baskerville",
+        "$type": "fontFamily",
+        "$description": "Serif display font — headings, logo"
+      },
+      "body": {
+        "$value": "Outfit",
+        "$type": "fontFamily",
+        "$description": "Sans-serif body font — navigation, copy, UI"
+      }
+    },
+    "weight": {
+      "extralight": {
+        "$value": 200,
+        "$type": "fontWeight"
+      },
+      "light": {
+        "$value": 300,
+        "$type": "fontWeight"
+      },
+      "regular": {
+        "$value": 400,
+        "$type": "fontWeight"
+      },
+      "medium": {
+        "$value": 500,
+        "$type": "fontWeight"
+      },
+      "semibold": {
+        "$value": 600,
+        "$type": "fontWeight"
+      },
+      "bold": {
+        "$value": 700,
+        "$type": "fontWeight"
+      }
+    },
+    "size": {
+      "xs": {
+        "$value": "0.75rem",
+        "$type": "dimension",
+        "$description": "12px — nav links, button labels, meta labels"
+      },
+      "sm": {
+        "$value": "0.875rem",
+        "$type": "dimension",
+        "$description": "14px — secondary links, large button"
+      },
+      "base": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "16px — body copy"
+      },
+      "lg": {
+        "$value": "1.125rem",
+        "$type": "dimension",
+        "$description": "18px — logo / site name"
+      },
+      "2xl": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "32px — section headings (h2)"
+      },
+      "3xl": {
+        "$value": "2.5rem",
+        "$type": "dimension",
+        "$description": "40px — large section headings"
+      },
+      "4xl": {
+        "$value": "3.25rem",
+        "$type": "dimension",
+        "$description": "52px — page h1"
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "$value": 1.25,
+        "$type": "number",
+        "$description": "Headings"
+      },
+      "normal": {
+        "$value": 1.5,
+        "$type": "number",
+        "$description": "Body copy"
+      }
+    },
+    "letterSpacing": {
+      "nav": {
+        "$value": "0.18em",
+        "$type": "dimension",
+        "$description": "Navigation links and uppercase labels"
+      },
+      "button": {
+        "$value": "0.2em",
+        "$type": "dimension",
+        "$description": "Button text"
+      }
+    }
+  },
+  "typography": {
+    "h1": {
+      "$value": {
+        "fontFamily": "{font.family.display}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.4xl}",
+        "lineHeight": "{font.lineHeight.tight}",
+        "letterSpacing": "0"
+      },
+      "$type": "typography"
+    },
+    "h2": {
+      "$value": {
+        "fontFamily": "{font.family.display}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.2xl}",
+        "lineHeight": "{font.lineHeight.tight}",
+        "letterSpacing": "0"
+      },
+      "$type": "typography"
+    },
+    "h2-large": {
+      "$value": {
+        "fontFamily": "{font.family.display}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.3xl}",
+        "lineHeight": "{font.lineHeight.tight}",
+        "letterSpacing": "0"
+      },
+      "$type": "typography",
+      "$description": "Used in contact/hero sections"
+    },
+    "body": {
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.base}",
+        "lineHeight": "{font.lineHeight.normal}",
+        "letterSpacing": "0"
+      },
+      "$type": "typography"
+    },
+    "body-light": {
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontWeight": "{font.weight.light}",
+        "fontSize": "{font.size.base}",
+        "lineHeight": "{font.lineHeight.normal}",
+        "letterSpacing": "0"
+      },
+      "$type": "typography",
+      "$description": "Descriptions and supporting copy"
+    },
+    "label": {
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.xs}",
+        "lineHeight": "{font.lineHeight.normal}",
+        "letterSpacing": "{font.letterSpacing.nav}"
+      },
+      "$type": "typography",
+      "$description": "Uppercase UI labels (textTransform: uppercase)"
+    },
+    "nav-link": {
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.xs}",
+        "lineHeight": "{font.lineHeight.normal}",
+        "letterSpacing": "{font.letterSpacing.nav}"
+      },
+      "$type": "typography",
+      "$description": "Uppercase navigation links"
+    },
+    "button": {
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.xs}",
+        "lineHeight": "{font.lineHeight.normal}",
+        "letterSpacing": "{font.letterSpacing.button}"
+      },
+      "$type": "typography",
+      "$description": "Button text — uppercase"
+    },
+    "logo": {
+      "$value": {
+        "fontFamily": "{font.family.display}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.lg}",
+        "lineHeight": "{font.lineHeight.tight}",
+        "letterSpacing": "0"
+      },
+      "$type": "typography",
+      "$description": "Site name in header"
+    }
+  }
+}
