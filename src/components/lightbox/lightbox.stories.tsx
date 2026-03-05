@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Lightbox } from './lightbox';
+import foodData from '@/data/food.json';
+import advertisingData from '@/data/advertising.json';
 
 /** Storybook metadata for Lightbox stories. */
 const meta: Meta<typeof Lightbox> = {
@@ -14,42 +16,31 @@ const meta: Meta<typeof Lightbox> = {
 export default meta;
 type Story = StoryObj<typeof Lightbox>;
 
-const mockItems = [
-  {
-    id: 'food-1',
-    image: { src: '/images/food/02.jpg', alt: 'Artisan produce' },
-    title: 'Artisan Produce',
-    category: 'Food',
-  },
-  {
-    id: 'food-2',
-    image: { src: '/images/food/04.jpg', alt: 'Fresh bread' },
-    title: 'Fresh Bread',
-    category: 'Food',
-  },
-  {
-    id: 'food-3',
-    image: { src: '/images/food/05.jpg', alt: 'Wine glass' },
-    title: 'Wine Glass',
-    category: 'Editorial',
-  },
-];
-
-/** Default lightbox showing the first image. */
+/** Default lightbox showing the first food image. */
 export const Default: Story = {
   args: {
-    items: mockItems,
+    items: foodData.items,
     currentIndex: 0,
     onClose: () => {},
     onNavigate: () => {},
   },
 };
 
-/** Lightbox starting at a middle image. */
+/** Lightbox starting at a middle food image. */
 export const MiddleImage: Story = {
   args: {
-    items: mockItems,
+    items: foodData.items,
     currentIndex: 1,
+    onClose: () => {},
+    onNavigate: () => {},
+  },
+};
+
+/** Lightbox with advertising collection images. */
+export const AdvertisingLightbox: Story = {
+  args: {
+    items: advertisingData.items,
+    currentIndex: 0,
     onClose: () => {},
     onNavigate: () => {},
   },
