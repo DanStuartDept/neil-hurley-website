@@ -20,7 +20,7 @@ export function GalleryItem({
     <button
       type="button"
       onClick={onClick}
-      className={`group relative aspect-[4/5] overflow-hidden rounded-sm cursor-pointer ${className}`}
+      className={`group relative aspect-[4/5] overflow-hidden rounded-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${className}`}
       aria-label={`View ${item.title}`}
     >
       <Image

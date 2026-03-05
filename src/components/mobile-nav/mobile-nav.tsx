@@ -73,7 +73,7 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
         ref={closeButtonRef}
         onClick={onClose}
         aria-label="Close navigation"
-        className="absolute top-6 right-6 text-primary text-2xl font-body cursor-pointer hover:text-accent transition-colors duration-300"
+        className="absolute top-6 right-6 text-primary text-2xl font-body cursor-pointer hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
       >
         &#x2715;
       </button>
@@ -85,7 +85,7 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
             href={link.href}
             ref={index === 0 ? firstLinkRef : undefined}
             onClick={onClose}
-            className="font-body font-light text-xl tracking-[0.25em] uppercase text-secondary hover:text-primary transition-colors duration-300"
+            className="font-body font-light text-xl tracking-[0.25em] uppercase text-secondary hover:text-primary transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
           >
             {link.label}
           </Link>

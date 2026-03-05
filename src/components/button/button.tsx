@@ -39,7 +39,7 @@ export function Button({
   type = 'button',
 }: ButtonProps) {
   const classes = [
-    'inline-flex items-center justify-center font-body uppercase tracking-[0.2em] rounded-none transition-all duration-300 ease-out',
+    'inline-flex items-center justify-center font-body uppercase tracking-[0.2em] rounded-none transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2',
     variantClasses[variant],
     sizeClasses[size],
     disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',

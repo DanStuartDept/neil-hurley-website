@@ -21,7 +21,7 @@ export function SiteHeader({ links }: SiteHeaderProps) {
           className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4"
           aria-label="Main navigation"
         >
-          <Link href="/" className="font-display text-lg text-primary">
+          <Link href="/" className="font-display text-lg text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
             Neil Hurley
           </Link>
 
@@ -37,6 +37,7 @@ export function SiteHeader({ links }: SiteHeaderProps) {
                       isActive ? 'text-primary' : 'text-secondary hover:text-primary',
                       'after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:bg-accent after:transition-all after:duration-[600ms] after:ease-out',
                       isActive ? 'after:w-full' : 'after:w-0 hover:after:w-full',
+                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2',
                     ].join(' ')}
                   >
                     {link.label}
@@ -48,7 +49,7 @@ export function SiteHeader({ links }: SiteHeaderProps) {
 
           <button
             type="button"
-            className="flex flex-col items-center justify-center gap-1.5 md:hidden"
+            className="flex flex-col items-center justify-center gap-1.5 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
             onClick={() => setMobileNavOpen(true)}
             aria-label="Open menu"
           >
