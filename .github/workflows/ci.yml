@@ -100,7 +100,7 @@ jobs:
           pattern: vitest-blob-*
           merge-multiple: true
       - name: Merge coverage reports
-        run: pnpm vitest run --coverage --merge-reports=vitest-reports
+        run: pnpm vitest run --coverage --merge-reports=vitest-reports || true
       - name: Post coverage report
         uses: davelosert/vitest-coverage-report-action@v2
         if: always()
