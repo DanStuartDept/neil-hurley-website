@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Hero } from '@/components/hero';
 import { GalleryGrid } from '@/components/gallery-grid';
 import { SectionHeader } from '@/components/section-header';
@@ -7,6 +8,24 @@ import homeData from '@/data/home.json';
 import foodData from '@/data/food.json';
 import advertisingData from '@/data/advertising.json';
 import clientsData from '@/data/clients.json';
+import { siteConfig } from '@/lib/site-config';
+
+export const metadata: Metadata = {
+  title: `Portfolio — ${siteConfig.name}`,
+  description: siteConfig.description,
+  openGraph: {
+    title: `Portfolio — ${siteConfig.name}`,
+    description: siteConfig.description,
+    type: 'website',
+    url: siteConfig.baseUrl,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Portfolio — ${siteConfig.name}`,
+    description: siteConfig.description,
+  },
+};
 
 const FOOD_PREVIEW_ITEMS = 5;
 const ADV_PREVIEW_ITEMS = 3;

@@ -3,13 +3,26 @@
 import Image from 'next/image';
 import { GalleryItemType } from '@/components/types';
 
+/**
+ * Props for the GalleryItem component.
+ */
 interface GalleryItemProps {
+  /** Gallery item data including image, title, and category. */
   item: GalleryItemType;
+  /** Callback fired when the item is clicked. */
   onClick: () => void;
+  /** Whether to prioritise loading this image. */
   priority?: boolean;
+  /** Additional CSS classes. */
   className?: string;
 }
 
+/**
+ * Clickable gallery thumbnail with hover overlay showing title and category.
+ *
+ * @example
+ * <GalleryItem item={item} onClick={() => {}} />
+ */
 export function GalleryItem({
   item,
   onClick,

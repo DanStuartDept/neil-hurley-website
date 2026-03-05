@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { PageHeader } from './page-header';
 
+/** Storybook metadata for PageHeader stories. */
 const meta: Meta<typeof PageHeader> = {
   title: 'Components/PageHeader',
   component: PageHeader,
@@ -10,6 +11,7 @@ const meta: Meta<typeof PageHeader> = {
 export default meta;
 type Story = StoryObj<typeof PageHeader>;
 
+/** Default page header with title and description. */
 export const Default: Story = {
   args: {
     title: 'Food & Drink',
@@ -17,6 +19,7 @@ export const Default: Story = {
   },
 };
 
+/** Page header without a description. */
 export const WithoutDescription: Story = {
   args: {
     title: 'Selected Clients',

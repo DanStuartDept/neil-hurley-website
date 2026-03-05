@@ -5,11 +5,22 @@ import { GalleryItemType } from '@/components/types';
 import { GalleryItem } from './gallery-item';
 import { Lightbox } from '@/components/lightbox';
 
+/**
+ * Props for the GalleryGrid component.
+ */
 interface GalleryGridProps {
+  /** Array of gallery items to display. */
   items: GalleryItemType[];
+  /** Layout variant: asymmetric makes the first item span two columns. */
   variant: 'asymmetric' | 'uniform';
 }
 
+/**
+ * Responsive image grid with integrated lightbox support.
+ *
+ * @example
+ * <GalleryGrid items={galleryItems} variant="asymmetric" />
+ */
 export function GalleryGrid({ items, variant }: GalleryGridProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 

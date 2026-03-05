@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Button } from './button';
 
+/** Storybook metadata for Button stories. */
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
@@ -20,6 +21,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
+/** Primary variant button. */
 export const Primary: Story = {
   args: {
     variant: 'primary',
@@ -27,6 +29,7 @@ export const Primary: Story = {
   },
 };
 
+/** Secondary variant button. */
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
@@ -34,6 +37,7 @@ export const Secondary: Story = {
   },
 };
 
+/** Ghost variant button. */
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
@@ -41,6 +45,7 @@ export const Ghost: Story = {
   },
 };
 
+/** Small size button. */
 export const Small: Story = {
   args: {
     variant: 'primary',
@@ -49,6 +54,7 @@ export const Small: Story = {
   },
 };
 
+/** Large size button. */
 export const Large: Story = {
   args: {
     variant: 'primary',
@@ -57,6 +63,7 @@ export const Large: Story = {
   },
 };
 
+/** Disabled state button. */
 export const Disabled: Story = {
   args: {
     variant: 'primary',
@@ -65,6 +72,7 @@ export const Disabled: Story = {
   },
 };
 
+/** Button rendered as a link. */
 export const AsLink: Story = {
   args: {
     variant: 'secondary',
