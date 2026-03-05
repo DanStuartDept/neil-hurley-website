@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
+import { SiteHeader } from '@/components/site-header';
+import { SiteFooter } from '@/components/site-footer';
+import navigationData from '@/data/navigation.json';
 
 export const metadata: Metadata = {
   title: 'Neil Hurley Photography',
@@ -21,7 +24,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body">{children}</body>
+      <body className="font-body">
+        <SiteHeader links={navigationData.links} />
+        <main>{children}</main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
