@@ -15,19 +15,19 @@ type Story = StoryObj<typeof Lightbox>;
 const mockItems = [
   {
     id: 'food-1',
-    image: { src: '/resources/images/food/001.jpg', alt: 'Artisan produce' },
+    image: { src: '/images/food/02.jpg', alt: 'Artisan produce' },
     title: 'Artisan Produce',
     category: 'Food',
   },
   {
     id: 'food-2',
-    image: { src: '/resources/images/food/002.jpg', alt: 'Fresh bread' },
+    image: { src: '/images/food/04.jpg', alt: 'Fresh bread' },
     title: 'Fresh Bread',
     category: 'Food',
   },
   {
     id: 'food-3',
-    image: { src: '/resources/images/food/003.jpg', alt: 'Wine glass' },
+    image: { src: '/images/food/05.jpg', alt: 'Wine glass' },
     title: 'Wine Glass',
     category: 'Editorial',
   },
