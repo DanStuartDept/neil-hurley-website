@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Hero } from '@/components/hero';
 import { GalleryGrid } from '@/components/gallery-grid';
 import { SectionHeader } from '@/components/section-header';
@@ -7,6 +8,24 @@ import homeData from '@/data/home.json';
 import foodData from '@/data/food.json';
 import advertisingData from '@/data/advertising.json';
 import clientsData from '@/data/clients.json';
+import { siteConfig } from '@/lib/site-config';
+
+export const metadata: Metadata = {
+  title: `Portfolio — ${siteConfig.name}`,
+  description: siteConfig.description,
+  openGraph: {
+    title: `Portfolio — ${siteConfig.name}`,
+    description: siteConfig.description,
+    type: 'website',
+    url: siteConfig.baseUrl,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Portfolio — ${siteConfig.name}`,
+    description: siteConfig.description,
+  },
+};
 
 const FOOD_PREVIEW_ITEMS = 5;
 const ADV_PREVIEW_ITEMS = 3;
@@ -15,6 +34,7 @@ const CLIENTS_PREVIEW_COUNT = 8;
 export default function HomePage() {
   return (
     <>
+      <h1 className="sr-only">Neil Hurley Photography</h1>
       <Hero image={homeData.hero.image} />
 
       <section className="mx-auto max-w-[1280px] px-6 py-20">

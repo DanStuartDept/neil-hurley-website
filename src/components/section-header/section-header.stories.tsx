@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { SectionHeader } from './section-header';
 
+/** Storybook metadata for SectionHeader stories. */
 const meta: Meta<typeof SectionHeader> = {
   title: 'Components/SectionHeader',
   component: SectionHeader,
@@ -10,6 +11,7 @@ const meta: Meta<typeof SectionHeader> = {
 export default meta;
 type Story = StoryObj<typeof SectionHeader>;
 
+/** Section header with a view-all link. */
 export const WithViewAllLink: Story = {
   args: {
     title: 'Food & Drink',
@@ -17,6 +19,7 @@ export const WithViewAllLink: Story = {
   },
 };
 
+/** Section header without a view-all link. */
 export const WithoutViewAllLink: Story = {
   args: {
     title: 'Selected Clients',

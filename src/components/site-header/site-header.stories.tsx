@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { SiteHeader } from './site-header';
 
+/** Storybook metadata for SiteHeader stories. */
 const meta: Meta<typeof SiteHeader> = {
   title: 'Components/SiteHeader',
   component: SiteHeader,
@@ -21,12 +22,14 @@ const defaultLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
+/** Default header with navigation links. */
 export const Default: Story = {
   args: {
     links: defaultLinks,
   },
 };
 
+/** Header with an active link highlighted. */
 export const WithActiveLink: Story = {
   args: {
     links: defaultLinks,

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { ClientGrid } from './client-grid';
 
+/** Storybook metadata for ClientGrid stories. */
 const meta: Meta<typeof ClientGrid> = {
   title: 'Components/ClientGrid',
   component: ClientGrid,
@@ -10,6 +11,7 @@ const meta: Meta<typeof ClientGrid> = {
 export default meta;
 type Story = StoryObj<typeof ClientGrid>;
 
+/** Default grid with a full set of clients. */
 export const Default: Story = {
   args: {
     clients: [
@@ -29,6 +31,7 @@ export const Default: Story = {
   },
 };
 
+/** Grid with only a few clients. */
 export const FewClients: Story = {
   args: {
     clients: [

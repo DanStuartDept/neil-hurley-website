@@ -1,10 +1,21 @@
 import type { ContactDetailType } from '@/components/types';
 
+/**
+ * Props for the ContactSection component.
+ */
 interface ContactSectionProps {
+  /** Section heading text. */
   heading: string;
+  /** List of contact detail entries (phone, email, location, etc.). */
   details: ContactDetailType[];
 }
 
+/**
+ * Two-column contact section with a heading, detail list, and call-to-action text.
+ *
+ * @example
+ * <ContactSection heading="Let's work together" details={[{ label: 'Email', value: 'info@neilhurley.com' }]} />
+ */
 export function ContactSection({ heading, details }: ContactSectionProps) {
   return (
     <section className="mx-auto grid max-w-[1280px] grid-cols-1 gap-[80px] px-6 py-20 md:grid-cols-2">
@@ -22,7 +33,7 @@ export function ContactSection({ heading, details }: ContactSectionProps) {
                 {detail.href ? (
                   <a
                     href={detail.href}
-                    className="transition-colors duration-300 hover:text-accent"
+                    className="transition-colors duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                   >
                     {detail.value}
                   </a>

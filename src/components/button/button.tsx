@@ -2,14 +2,25 @@
 
 import Link from 'next/link';
 
+/**
+ * Props for the Button component.
+ */
 interface ButtonProps {
+  /** Visual style variant. */
   variant?: 'primary' | 'secondary' | 'ghost';
+  /** Size preset controlling padding and font size. */
   size?: 'sm' | 'default' | 'lg';
+  /** Button content. */
   children: React.ReactNode;
+  /** Click handler. */
   onClick?: () => void;
+  /** Whether the button is disabled. */
   disabled?: boolean;
+  /** If provided, renders as a Next.js Link instead of a button. */
   href?: string;
+  /** Additional CSS classes. */
   className?: string;
+  /** HTML button type attribute. */
   type?: 'button' | 'submit' | 'reset';
 }
 
@@ -28,6 +39,12 @@ const sizeClasses: Record<string, string> = {
   lg: 'px-8 py-3.5 text-sm',
 };
 
+/**
+ * A polymorphic button that renders as a link when `href` is provided.
+ *
+ * @example
+ * <Button variant="primary" size="default">Click me</Button>
+ */
 export function Button({
   variant = 'primary',
   size = 'default',

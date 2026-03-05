@@ -1,8 +1,19 @@
+/**
+ * Props for the PageHeader component.
+ */
 interface PageHeaderProps {
+  /** Page title displayed as an h1 heading. */
   title: string;
+  /** Optional descriptive text shown below the title. */
   description?: string;
 }
 
+/**
+ * Top-of-page header with a large title and optional description.
+ *
+ * @example
+ * <PageHeader title="Food & Drink" description="Crafting appetite through light." />
+ */
 export function PageHeader({ title, description }: PageHeaderProps) {
   return (
     <header className="mx-auto max-w-[1280px] px-6 pb-12 pt-32">

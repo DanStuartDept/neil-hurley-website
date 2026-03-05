@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Lightbox } from './lightbox';
 
+/** Storybook metadata for Lightbox stories. */
 const meta: Meta<typeof Lightbox> = {
   title: 'Components/Lightbox',
   component: Lightbox,
@@ -34,6 +35,7 @@ const mockItems = [
   },
 ];
 
+/** Default lightbox showing the first image. */
 export const Default: Story = {
   args: {
     items: mockItems,
@@ -43,6 +45,7 @@ export const Default: Story = {
   },
 };
 
+/** Lightbox starting at a middle image. */
 export const MiddleImage: Story = {
   args: {
     items: mockItems,

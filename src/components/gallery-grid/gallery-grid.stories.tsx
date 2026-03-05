@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { GalleryGrid } from './gallery-grid';
 
+/** Storybook metadata for GalleryGrid stories. */
 const meta: Meta<typeof GalleryGrid> = {
   title: 'Components/GalleryGrid',
   component: GalleryGrid,
@@ -46,6 +47,7 @@ const mockItems = [
   },
 ];
 
+/** Asymmetric layout with a featured first item. */
 export const Asymmetric: Story = {
   args: {
     items: mockItems,
@@ -53,6 +55,7 @@ export const Asymmetric: Story = {
   },
 };
 
+/** Uniform layout with equally sized items. */
 export const Uniform: Story = {
   args: {
     items: mockItems,

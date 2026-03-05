@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { ContactSection } from './contact-section';
 
+/** Storybook metadata for ContactSection stories. */
 const meta: Meta<typeof ContactSection> = {
   title: 'Components/ContactSection',
   component: ContactSection,
@@ -10,6 +11,7 @@ const meta: Meta<typeof ContactSection> = {
 export default meta;
 type Story = StoryObj<typeof ContactSection>;
 
+/** Default contact section with phone, email, and location. */
 export const Default: Story = {
   args: {
     heading: "Let's work together",

@@ -4,12 +4,24 @@ import { useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { LinkType } from '@/components/types';
 
+/**
+ * Props for the MobileNav component.
+ */
 interface MobileNavProps {
+  /** Whether the mobile navigation overlay is visible. */
   isOpen: boolean;
+  /** Callback fired when the navigation should close. */
   onClose: () => void;
+  /** Navigation links to display. */
   links: LinkType[];
 }
 
+/**
+ * Full-screen mobile navigation overlay with focus trapping and keyboard support.
+ *
+ * @example
+ * <MobileNav isOpen={true} onClose={() => {}} links={[{ label: 'Home', href: '/' }]} />
+ */
 export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
   const navRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);

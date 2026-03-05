@@ -1,11 +1,22 @@
 import Link from 'next/link';
 import type { LinkType } from '@/components/types';
 
+/**
+ * Props for the SiteFooter component.
+ */
 interface SiteFooterProps {
+  /** Copyright year; defaults to the current year. */
   year?: number;
+  /** Optional footer navigation links. */
   links?: LinkType[];
 }
 
+/**
+ * Site-wide footer with copyright notice and optional navigation links.
+ *
+ * @example
+ * <SiteFooter year={2026} links={[{ label: 'Privacy', href: '/privacy' }]} />
+ */
 export function SiteFooter({ year, links }: SiteFooterProps) {
   const displayYear = year ?? new Date().getFullYear();
 

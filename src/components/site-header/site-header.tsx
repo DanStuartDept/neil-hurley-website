@@ -6,10 +6,20 @@ import { usePathname } from 'next/navigation';
 import type { LinkType } from '@/components/types';
 import { MobileNav } from '@/components/mobile-nav';
 
+/**
+ * Props for the SiteHeader component.
+ */
 interface SiteHeaderProps {
+  /** Navigation links displayed in the header. */
   links: LinkType[];
 }
 
+/**
+ * Sticky site header with desktop nav links and a mobile hamburger menu.
+ *
+ * @example
+ * <SiteHeader links={[{ label: 'Home', href: '/' }]} />
+ */
 export function SiteHeader({ links }: SiteHeaderProps) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const pathname = usePathname();
