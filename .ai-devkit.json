@@ -13,5 +13,15 @@
     "monitoring"
   ],
   "createdAt": "2026-03-05T16:37:08.858Z",
-  "updatedAt": "2026-03-05T16:37:08.962Z"
+  "updatedAt": "2026-03-05T16:46:48.437Z",
+  "skills": [
+    {
+      "registry": "anthropics/skills",
+      "name": "frontend-design"
+    },
+    {
+      "registry": "sickn33/antigravity-awesome-skills",
+      "name": "figma-automation"
+    }
+  ]
 }
