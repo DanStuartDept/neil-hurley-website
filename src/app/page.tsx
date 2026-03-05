@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Hero } from '@/components/hero';
+import { HeroOverlapping } from '@/components/hero-overlapping';
 import { GalleryGrid } from '@/components/gallery-grid';
 import { SectionHeader } from '@/components/section-header';
 import { ClientGrid } from '@/components/client-grid';
@@ -32,15 +32,11 @@ const ADV_PREVIEW_ITEMS = 3;
 const CLIENTS_PREVIEW_COUNT = 8;
 
 export default function HomePage() {
+  const heroImagePool = [...foodData.items.map((i) => i.image), ...advertisingData.items.map((i) => i.image)];
+
   return (
     <>
-      <h1 className="sr-only">Neil Hurley Photography</h1>
-      <Hero
-        image={homeData.hero.image}
-        name={homeData.hero.name}
-        tagline={homeData.hero.tagline}
-        specialties={homeData.hero.specialties}
-      />
+      <HeroOverlapping name={homeData.hero.name} imagePool={heroImagePool} />
 
       
       <section className="bg-background px-6 py-20">

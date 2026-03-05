@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neil Hurley — Overlapping Frames Hero</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f2;
+    --bg-alt: #efece7;
+    --text-primary: #1a1815;
+    --text-secondary: #7a756e;
+    --text-muted: #a8a29e;
+    --accent: #8b7355;
+    --border: #e0dbd4;
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'Outfit', system-ui, sans-serif;
+    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ─── Nav ─── */
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    background: var(--bg);
+  }
+
+  nav .logo {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  nav .links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  nav .links a {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 3px;
+  }
+
+  nav .links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.5s var(--ease);
+  }
+
+  nav .links a:hover { color: var(--text-primary); }
+  nav .links a:hover::after { width: 100%; }
+  nav .links a.active { color: var(--text-primary); }
+  nav .links a.active::after { width: 100%; }
+
+  /* ─── Hero ─── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    overflow: hidden;
+  }
+
+  /* ─── Frames ─── */
+  .frame {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 2px;
+    background: var(--bg-alt);
+    will-change: transform;
+    transition: box-shadow 0.6s ease;
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+
+  .frame img.loaded { opacity: 1; }
+
+  /* Back frame — larger, right side, below nav */
+  .frame-back {
+    width: 52%;
+    height: 62%;
+    right: 6%;
+    top: 18%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+    z-index: 1;
+  }
+
+  /* Front frame — smaller, left side, overlapping */
+  .frame-front {
+    width: 38%;
+    height: 52%;
+    left: 10%;
+    top: 26%;
+    box-shadow: 0 28px 72px rgba(0,0,0,0.1);
+    z-index: 3;
+  }
+
+  /* Accent frame — small, tucked below nav on right */
+  .frame-accent {
+    width: 18%;
+    height: 24%;
+    right: 4%;
+    top: 10%;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInAccent 1.4s ease 0.8s forwards;
+  }
+
+  @keyframes fadeInAccent {
+    to { opacity: 1; }
+  }
+
+  /* ─── Frame decorative borders ─── */
+  .frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255,255,255,0.15);
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 2px;
+  }
+
+  /* ─── Text ─── */
+  .hero-text {
+    position: absolute;
+    bottom: 56px;
+    left: 48px;
+    z-index: 10;
+  }
+
+  .hero-text h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    color: var(--text-primary);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: textReveal 1s var(--ease) 0.3s forwards;
+  }
+
+  .hero-text h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-text .accent-line {
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    margin-top: 16px;
+    animation: lineGrow 0.8s var(--ease) 0.9s forwards;
+  }
+
+  @keyframes textReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes lineGrow {
+    to { width: 40px; }
+  }
+
+  /* ─── Scroll cue ─── */
+  .scroll-cue {
+    position: absolute;
+    bottom: 56px;
+    right: 48px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    animation: textReveal 0.8s var(--ease) 1.6s forwards;
+  }
+
+  .scroll-cue span {
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .scroll-cue .scroll-line {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollPulse 2.5s ease infinite 2s;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ─── Subtle background texture ─── */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 256px;
+  }
+
+  /* ─── Dummy content below for scroll testing ─── */
+  .content-below {
+    padding: 80px 48px;
+    border-top: 1px solid var(--border);
+  }
+
+  .content-below .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+  }
+
+  .content-below h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--text-primary);
+  }
+
+  .content-below h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .content-below .view-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 3px;
+  }
+
+  .placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .placeholder-grid .ph {
+    aspect-ratio: 4/5;
+    background: var(--bg-alt);
+    border-radius: 2px;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    nav .links { display: none; }
+
+    .frame-back {
+      width: 65%;
+      height: 55%;
+      right: 4%;
+      top: 20%;
+    }
+
+    .frame-front {
+      width: 55%;
+      height: 45%;
+      left: 6%;
+      top: 30%;
+    }
+
+    .frame-accent {
+      width: 28%;
+      height: 22%;
+      right: 3%;
+      top: 8%;
+    }
+
+    .hero-text {
+      bottom: 40px;
+      left: 24px;
+    }
+
+    .scroll-cue { right: 24px; bottom: 40px; }
+    .content-below { padding: 48px 24px; }
+    .placeholder-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="#" class="logo">Neil Hurley</a>
+  <ul class="links">
+    <li><a href="#" class="active">Portfolio</a></li>
+    <li><a href="#">Food</a></li>
+    <li><a href="#">Advertising</a></li>
+    <li><a href="#">Clients</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="frame frame-back" data-speed="0.03">
+    <img id="img-back" alt="Neil Hurley Photography">
+  </div>
+  <div class="frame frame-front" data-speed="-0.05">
+    <img id="img-front" alt="Neil Hurley Photography">
+  </div>
+  <div class="frame frame-accent" data-speed="0.02">
+    <img id="img-accent" alt="Neil Hurley Photography">
+  </div>
+
+  <div class="hero-text">
+    <h1>Neil <em>Hurley</em></h1>
+    <div class="accent-line"></div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Content below for scroll context -->
+<section class="content-below">
+  <div class="section-header">
+    <h2>Food <em>&amp;</em> Drink</h2>
+    <a href="#" class="view-link">View Collection</a>
+  </div>
+  <div class="placeholder-grid">
+    <div class="ph"></div>
+    <div class="ph"></div>
+    <div class="ph"></div>
+  </div>
+</section>
+
+<script>
+  // ─── Image pool from Neil's actual portfolio ───
+  const imagePool = {
+    // A mix across all categories for variety
+    all: [
+      // Product
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/122.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/1021.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/1161.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/120.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/130.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/1231.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/73.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2019/01/71.jpg',
+      // Food
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/121.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2017/06/531.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2017/06/24.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2017/06/47.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2017/06/36.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2016/01/Food-0030-Brown-Thomas-Group-2016.jpg',
+      // Advertising
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/131.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/1281.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/127.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/126.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2020/04/124.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2019/01/69.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2019/01/61.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2018/05/01.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2018/05/04.jpg',
+      'https://www.neilhurley.com/wp-content/uploads/2017/10/49.jpg',
+    ]
+  };
+
+  // ─── Pick 3 unique random images ───
+  function pickRandom(pool, count) {
+    const shuffled = [...pool].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+  }
+
+  function loadImages() {
+    const [src1, src2, src3] = pickRandom(imagePool.all, 3);
+    const slots = [
+      { el: document.getElementById('img-back'), src: src1 },
+      { el: document.getElementById('img-front'), src: src2 },
+      { el: document.getElementById('img-accent'), src: src3 },
+    ];
+
+    slots.forEach(({ el, src }) => {
+      el.onload = () => el.classList.add('loaded');
+      el.src = src;
+    });
+  }
+
+  loadImages();
+
+  // ─── Parallax on scroll ───
+  const frames = document.querySelectorAll('.frame[data-speed]');
+  const hero = document.getElementById('hero');
+
+  let ticking = false;
+  let scrollY = 0;
+
+  function updateParallax() {
+    const heroRect = hero.getBoundingClientRect();
+    const heroTop = heroRect.top;
+    const progress = -heroTop; // how far we've scrolled past the hero top
+
+    frames.forEach(frame => {
+      const speed = parseFloat(frame.dataset.speed);
+      const yOffset = progress * speed;
+      frame.style.transform = `translateY(${yOffset}px)`;
+    });
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  });
+
+  // ─── Subtle mouse parallax (desktop only) ───
+  if (window.matchMedia('(min-width: 769px)').matches) {
+    let mouseX = 0.5;
+    let mouseY = 0.5;
+    let currentX = 0.5;
+    let currentY = 0.5;
+
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      mouseX = (e.clientX - rect.left) / rect.width;
+      mouseY = (e.clientY - rect.top) / rect.height;
+    });
+
+    function animateMouse() {
+      // Smooth lerp
+      currentX += (mouseX - currentX) * 0.04;
+      currentY += (mouseY - currentY) * 0.04;
+
+      const offsetX = (currentX - 0.5);
+      const offsetY = (currentY - 0.5);
+
+      const back = document.querySelector('.frame-back');
+      const front = document.querySelector('.frame-front');
+      const accent = document.querySelector('.frame-accent');
+
+      // Each frame moves at different intensity for depth
+      const scrollOffset = parseFloat(back.style.transform?.match(/translateY\((.+)px\)/)?.[1] || 0);
+
+      back.style.transform = `translate(${offsetX * -8}px, ${offsetY * -6 + parseFloat(back.dataset.speed) * (-hero.getBoundingClientRect().top)}px)`;
+      front.style.transform = `translate(${offsetX * 14}px, ${offsetY * 10 + parseFloat(front.dataset.speed) * (-hero.getBoundingClientRect().top)}px)`;
+      accent.style.transform = `translate(${offsetX * -5}px, ${offsetY * -4 + parseFloat(accent.dataset.speed) * (-hero.getBoundingClientRect().top)}px)`;
+
+      requestAnimationFrame(animateMouse);
+    }
+
+    animateMouse();
+  }
+
+  // ─── Reload button (for demo — shows random images) ───
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'r' || e.key === 'R') {
+      document.querySelectorAll('.frame img').forEach(img => img.classList.remove('loaded'));
+      setTimeout(loadImages, 300);
+    }
+  });
+</script>
+
+</body>
+</html>
