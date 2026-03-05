@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { GalleryGrid } from './gallery-grid';
+import foodData from '@/data/food.json';
+import advertisingData from '@/data/advertising.json';
 
 /** Storybook metadata for GalleryGrid stories. */
 const meta: Meta<typeof GalleryGrid> = {
@@ -14,43 +16,10 @@ const meta: Meta<typeof GalleryGrid> = {
 export default meta;
 type Story = StoryObj<typeof GalleryGrid>;
 
-const mockItems = [
-  {
-    id: 'food-1',
-    image: { src: '/images/food/02.jpg', alt: 'Artisan produce' },
-    title: 'Artisan Produce',
-    category: 'Food',
-  },
-  {
-    id: 'food-2',
-    image: { src: '/images/food/04.jpg', alt: 'Fresh bread' },
-    title: 'Fresh Bread',
-    category: 'Food',
-  },
-  {
-    id: 'food-3',
-    image: { src: '/images/food/05.jpg', alt: 'Wine glass' },
-    title: 'Wine Glass',
-    category: 'Editorial',
-  },
-  {
-    id: 'food-4',
-    image: { src: '/images/food/10.jpg', alt: 'Cheese board' },
-    title: 'Cheese Board',
-    category: 'Food',
-  },
-  {
-    id: 'food-5',
-    image: { src: '/images/food/11.jpg', alt: 'Coffee setup' },
-    title: 'Coffee Setup',
-    category: 'Product',
-  },
-];
-
 /** Asymmetric layout with a featured first item. */
 export const Asymmetric: Story = {
   args: {
-    items: mockItems,
+    items: foodData.items.slice(0, 5),
     variant: 'asymmetric',
   },
 };
@@ -58,7 +27,23 @@ export const Asymmetric: Story = {
 /** Uniform layout with equally sized items. */
 export const Uniform: Story = {
   args: {
-    items: mockItems,
+    items: advertisingData.items.slice(0, 3),
+    variant: 'uniform',
+  },
+};
+
+/** Full food collection in asymmetric layout. */
+export const FullFoodGrid: Story = {
+  args: {
+    items: foodData.items,
+    variant: 'asymmetric',
+  },
+};
+
+/** Full advertising collection in uniform layout. */
+export const FullAdvertisingGrid: Story = {
+  args: {
+    items: advertisingData.items,
     variant: 'uniform',
   },
 };
