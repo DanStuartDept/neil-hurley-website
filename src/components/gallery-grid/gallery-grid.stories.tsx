@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 import { GalleryGrid } from './gallery-grid';
 import foodData from '@/data/food.json';
 import advertisingData from '@/data/advertising.json';
