@@ -13,7 +13,7 @@
     "monitoring"
   ],
   "createdAt": "2026-03-05T16:37:08.858Z",
-  "updatedAt": "2026-03-05T16:46:48.437Z",
+  "updatedAt": "2026-03-05T17:00:34.016Z",
   "skills": [
     {
       "registry": "anthropics/skills",
@@ -22,6 +22,10 @@
     {
       "registry": "sickn33/antigravity-awesome-skills",
       "name": "figma-automation"
+    },
+    {
+      "registry": "codeaholicguy/ai-devkit",
+      "name": "memory"
     }
   ]
 }
