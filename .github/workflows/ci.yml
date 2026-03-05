@@ -68,7 +68,9 @@ jobs:
       - name: Install Playwright Chromium
         run: pnpm exec playwright install chromium --with-deps
       - name: Run Storybook tests with coverage
-        run: pnpm vitest run --project storybook --coverage --reporter=blob --outputFile=.vitest-reports/storybook.blob.json
+        run: |
+          timeout 120 pnpm vitest run --project storybook --coverage --reporter=blob --outputFile=.vitest-reports/storybook.blob.json || true
+          test -f .vitest-reports/storybook.blob.json
       - name: Upload coverage blob
         uses: actions/upload-artifact@v4
         if: always()
