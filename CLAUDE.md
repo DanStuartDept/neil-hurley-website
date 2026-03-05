@@ -14,6 +14,7 @@ pnpm lint             # ESLint
 pnpm typecheck        # TypeScript type check
 pnpm format           # Prettier
 pnpm build            # Production build
+pnpm e2e              # Playwright E2E tests
 ```
 
 To run a single test file: `pnpm vitest run --project unit src/components/button/button.test.tsx`
@@ -30,6 +31,10 @@ To run a single test file: `pnpm vitest run --project unit src/components/button
 
 **Images** — always use `next/image`. Portfolio images live in `public/images/` organized by category.
 
+**Path alias** — `@/` maps to `src/`. Use it for all internal imports.
+
+**Site metadata** — `src/lib/site-config.ts` exports `siteConfig` (name, baseUrl, description). Use it in `metadata` exports instead of hardcoding strings.
+
 ## Component Conventions
 
 Each component lives in `src/components/<name>/` with four files:
@@ -41,6 +46,8 @@ Each component lives in `src/components/<name>/` with four files:
 Test assertions use semantic queries (`getByRole`, `getByAltText`, `getByLabelText`) — avoid `getByTestId`.
 
 Stories use `tags: ['autodocs']` and import from `storybook/test` for interaction tests.
+
+`GalleryGrid` accepts a `variant` prop: `"asymmetric"` (mixed sizes, used for featured sections) or `"uniform"` (equal grid).
 
 ## Testing Stack
 
