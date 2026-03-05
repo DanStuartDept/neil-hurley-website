@@ -3,6 +3,11 @@ import type { Preview } from '@storybook/nextjs-vite';
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ['Introduction', 'Design System', ['Colours', 'Typography', 'Atoms', 'Page Templates'], 'Components', '*'],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
