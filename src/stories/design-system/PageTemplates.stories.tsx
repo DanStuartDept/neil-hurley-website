@@ -177,7 +177,7 @@ export const ContactPage: Story = {
         <section className="mx-auto grid max-w-[1280px] grid-cols-2 gap-[80px] px-6 py-20">
           <div>
             <h2 className="mb-10 text-[2.5rem] leading-tight text-[#1a1815]" style={{ fontFamily: 'var(--font-baskerville), Georgia, serif' }}>
-              Let's work together
+              Let&apos;s work together
             </h2>
             <dl className="space-y-6">
               {[
