@@ -9,7 +9,16 @@ const config: StorybookConfig = {
     "@chromatic-com/storybook",
 "@storybook/addon-a11y",
     "@storybook/addon-docs",
-    "@storybook/addon-onboarding"
+    "@storybook/addon-onboarding",
+    {
+      name: '@storybook/addon-coverage',
+      options: {
+        istanbul: {
+          include: ['src/components/**'],
+          exclude: ['**/*.stories.*', '**/*.test.*', '**/index.ts'],
+        },
+      },
+    },
   ],
   "framework": "@storybook/nextjs-vite",
   "staticDirs": [
