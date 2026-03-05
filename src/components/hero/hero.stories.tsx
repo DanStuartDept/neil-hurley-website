@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Hero>;
 export const Default: Story = {
   args: {
     image: {
-      src: '/resources/images/hero/main.jpg',
+      src: '/images/product/1021.jpg',
       alt: 'Neil Hurley Photography',
     },
   },
