@@ -3,7 +3,7 @@
 Portfolio website for Dublin-based still life and product photographer Neil Hurley.
 
 **Design Direction:** Clean White Gallery
-**Stack:** Next.js 16 · Tailwind CSS 4 · TypeScript · Storybook 10 · Vitest
+**Stack:** Next.js 16 · Tailwind CSS 4 · TypeScript · Storybook 10 · Vitest · Turborepo
 
 ## Prerequisites
 
@@ -19,18 +19,24 @@ pnpm install
 ## Development
 
 ```bash
-pnpm dev          # Start dev server at localhost:3000
-pnpm storybook    # Start Storybook at localhost:6006
+pnpm turbo dev        # Start dev server at localhost:3000
+pnpm storybook        # Start Storybook at localhost:6006
 ```
 
 ## Testing & Quality
 
 ```bash
-pnpm test         # Run Vitest tests
-pnpm test:watch   # Vitest watch mode
-pnpm lint         # ESLint
-pnpm format       # Prettier
-pnpm typecheck    # TypeScript type check
+pnpm turbo test           # Run Vitest tests
+pnpm turbo test:stories   # Run Storybook interaction tests
+pnpm turbo lint           # ESLint
+pnpm turbo typecheck      # TypeScript type check
+pnpm format               # Prettier
+```
+
+## Build
+
+```bash
+pnpm turbo build      # Production build (with Turbo caching)
 ```
 
 ## Project Structure
