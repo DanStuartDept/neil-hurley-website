@@ -2,6 +2,7 @@
   "name": "neil-hurley-photography",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.30.3",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -51,6 +52,7 @@
     "prettier": "^3.8.1",
     "storybook": "^10.2.15",
     "tailwindcss": "^4",
+    "turbo": "^2.8.13",
     "typescript": "^5",
     "vite": "^7.3.1",
     "vitest": "^4.0.18"
