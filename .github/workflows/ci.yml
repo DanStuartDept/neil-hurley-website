@@ -45,13 +45,13 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - name: Run tests with coverage
-        run: pnpm vitest run --project unit --coverage --reporter=blob --outputFile=.vitest-reports/unit.blob.json
+        run: pnpm vitest run --project unit --coverage --reporter=blob --outputFile=vitest-reports/unit.blob.json
       - name: Upload coverage blob
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: vitest-blob-unit
-          path: .vitest-reports/
+          path: vitest-reports/
           retention-days: 1
 
   storybook-tests:
@@ -69,13 +69,14 @@ jobs:
         run: pnpm exec playwright install chromium --with-deps
       - name: Run Storybook tests with coverage
         run: |
-          timeout 120 pnpm vitest run --project storybook --coverage --reporter=blob --outputFile=.vitest-reports/storybook.blob.json || true
+          timeout 120 pnpm vitest run --project storybook --coverage --reporter=blob --outputFile=vitest-reports/storybook.blob.json || true
+          test -f vitest-reports/storybook.blob.json
       - name: Upload coverage blob
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: vitest-blob-storybook
-          path: .vitest-reports/
+          path: vitest-reports/
           retention-days: 1
 
   coverage-report:
@@ -95,11 +96,11 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - uses: actions/download-artifact@v4
         with:
-          path: .
+          path: vitest-reports
           pattern: vitest-blob-*
           merge-multiple: true
       - name: Merge coverage reports
-        run: pnpm vitest --merge-reports=.vitest-reports
+        run: pnpm vitest run --coverage --merge-reports=vitest-reports
       - name: Post coverage report
         uses: davelosert/vitest-coverage-report-action@v2
         if: always()
