@@ -1,7 +1,55 @@
+import { Hero } from '@/components/hero';
+import { GalleryGrid } from '@/components/gallery-grid';
+import { SectionHeader } from '@/components/section-header';
+import { ClientGrid } from '@/components/client-grid';
+import { ContactSection } from '@/components/contact-section';
+import homeData from '@/data/home.json';
+import foodData from '@/data/food.json';
+import advertisingData from '@/data/advertising.json';
+import clientsData from '@/data/clients.json';
+
+const FOOD_PREVIEW_ITEMS = 5;
+const ADV_PREVIEW_ITEMS = 3;
+const CLIENTS_PREVIEW_COUNT = 8;
+
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="font-display text-4xl text-primary">Neil Hurley Photography</h1>
-    </main>
+    <>
+      <Hero image={homeData.hero.image} />
+
+      <section className="mx-auto max-w-[1280px] px-6 py-20">
+        <SectionHeader
+          title="Food & Drink"
+          viewAllLink={{ label: 'View Collection', href: '/food' }}
+        />
+        <GalleryGrid items={foodData.items.slice(0, FOOD_PREVIEW_ITEMS)} variant="asymmetric" />
+      </section>
+
+      <section className="bg-background-alt py-20">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <SectionHeader
+            title="Advertising & Product"
+            viewAllLink={{ label: 'View Collection', href: '/advertising' }}
+          />
+          <GalleryGrid items={advertisingData.items.slice(0, ADV_PREVIEW_ITEMS)} variant="uniform" />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1280px] px-6 py-20">
+        <SectionHeader
+          title="Selected Clients"
+          viewAllLink={{ label: 'View All', href: '/clients' }}
+        />
+        <ClientGrid clients={clientsData.clients.slice(0, CLIENTS_PREVIEW_COUNT)} />
+      </section>
+
+      <ContactSection
+        heading="Let's work together"
+        details={[
+          { label: 'Email', value: 'info@neilhurley.com', href: 'mailto:info@neilhurley.com' },
+          { label: 'Location', value: 'Dublin, Ireland' },
+        ]}
+      />
+    </>
   );
 }
