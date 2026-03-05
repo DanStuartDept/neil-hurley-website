@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { expect, userEvent, within } from 'storybook/test';
 import { GalleryGrid } from './gallery-grid';
 import foodData from '@/data/food.json';
 import advertisingData from '@/data/advertising.json';
@@ -45,5 +46,22 @@ export const FullAdvertisingGrid: Story = {
   args: {
     items: advertisingData.items,
     variant: 'uniform',
+  },
+};
+
+/** Clicking a gallery item opens the lightbox dialog. */
+export const OpensLightboxOnItemClick: Story = {
+  args: {
+    items: foodData.items.slice(0, 3),
+    variant: 'uniform',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const firstItem = canvas.getByRole('button', {
+      name: /View Fresh Ingredients/i,
+    });
+    await userEvent.click(firstItem);
+    const dialog = await within(document.body).findByRole('dialog');
+    await expect(dialog).toBeVisible();
   },
 };
