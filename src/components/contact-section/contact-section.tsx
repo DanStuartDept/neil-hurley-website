@@ -33,7 +33,7 @@ export function ContactSection({ heading, details }: ContactSectionProps) {
                 {detail.href ? (
                   <a
                     href={detail.href}
-                    className="transition-colors duration-300 hover:text-accent"
+                    className="transition-colors duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                   >
                     {detail.value}
                   </a>
