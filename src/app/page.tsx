@@ -34,6 +34,7 @@ const CLIENTS_PREVIEW_COUNT = 8;
 export default function HomePage() {
   return (
     <>
+      <h1 className="sr-only">Neil Hurley Photography</h1>
       <Hero image={homeData.hero.image} />
 
       <section className="mx-auto max-w-[1280px] px-6 py-20">

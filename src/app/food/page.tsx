@@ -1,10 +1,24 @@
+import type { Metadata } from 'next';
 import { PageHeader } from '@/components/page-header';
 import { GalleryGrid } from '@/components/gallery-grid';
 import foodData from '@/data/food.json';
+import { siteConfig } from '@/lib/site-config';
 
-export const metadata = {
-  title: 'Food & Drink — Neil Hurley Photography',
+export const metadata: Metadata = {
+  title: `Food & Drink — ${siteConfig.name}`,
   description: foodData.header.description,
+  openGraph: {
+    title: `Food & Drink — ${siteConfig.name}`,
+    description: foodData.header.description,
+    type: 'website',
+    url: `${siteConfig.baseUrl}/food`,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Food & Drink — ${siteConfig.name}`,
+    description: foodData.header.description,
+  },
 };
 
 export default function FoodPage() {
