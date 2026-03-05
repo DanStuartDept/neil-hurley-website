@@ -13,6 +13,8 @@ interface GalleryItemProps {
   onClick: () => void;
   /** Whether to prioritise loading this image. */
   priority?: boolean;
+  /** Responsive sizes attribute for the image. */
+  sizes?: string;
   /** Additional CSS classes. */
   className?: string;
 }
@@ -27,6 +29,7 @@ export function GalleryItem({
   item,
   onClick,
   priority = false,
+  sizes = '(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw',
   className = '',
 }: GalleryItemProps) {
   return (
@@ -40,7 +43,7 @@ export function GalleryItem({
         src={item.image.src}
         alt={item.image.alt}
         fill
-        sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+        sizes={sizes}
         className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
         priority={priority}
       />

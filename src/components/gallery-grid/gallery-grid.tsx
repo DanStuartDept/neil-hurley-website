@@ -33,6 +33,11 @@ export function GalleryGrid({ items, variant }: GalleryGridProps) {
             item={item}
             onClick={() => setLightboxIndex(index)}
             priority={index === 0}
+            sizes={
+              variant === 'asymmetric' && index === 0
+                ? '(max-width: 768px) 100vw, (max-width: 1280px) 66vw, 853px'
+                : undefined
+            }
             className={
               variant === 'asymmetric' && index === 0
                 ? 'md:col-span-2 md:row-span-2'
