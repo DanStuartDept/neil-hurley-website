@@ -17,17 +17,17 @@ interface HeroProps {
  */
 export function Hero({ image }: HeroProps) {
   return (
-    <section className="relative h-[85vh] min-h-[500px] w-full overflow-hidden">
+    <section className="relative h-[85vh] min-h-125 w-full overflow-hidden">
       <Image
         src={image.src}
         alt={image.alt}
         fill
-        className="object-cover"
+        className="object-cover pointer-events-none"
         priority
         quality={85}
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-background to-transparent pointer-events-none" />
     </section>
   );
 }

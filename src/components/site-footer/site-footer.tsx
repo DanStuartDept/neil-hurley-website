@@ -21,7 +21,7 @@ export function SiteFooter({ year, links }: SiteFooterProps) {
   const displayYear = year ?? new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border px-12 py-10">
+    <footer className="border-t border-border px-12 py-10 bg-background">
       <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-4 sm:flex-row">
         <p className="font-body text-xs tracking-[0.12em] text-muted">
           &copy; {displayYear} Neil Hurley Photography
