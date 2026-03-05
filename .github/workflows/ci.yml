@@ -54,7 +54,7 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - name: Run tests with coverage
-        run: pnpm test -- --coverage
+        run: pnpm test:coverage
       - name: Post coverage report
         uses: davelosert/vitest-coverage-report-action@v2
         if: always()
