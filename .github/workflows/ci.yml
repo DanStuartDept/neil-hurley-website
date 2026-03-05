@@ -56,6 +56,22 @@ jobs:
           json-summary-path: coverage/coverage-summary.json
           json-final-path: coverage/coverage-final.json
 
+  storybook-tests:
+    name: Storybook Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install chromium --with-deps
+      - name: Run Storybook tests
+        run: pnpm turbo test:stories
+
   lighthouse:
     name: Lighthouse CI
     runs-on: ubuntu-latest
