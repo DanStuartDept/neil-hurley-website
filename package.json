@@ -28,7 +28,6 @@
     "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.58.2",
     "@storybook/addon-a11y": "^10.2.15",
-    "@storybook/addon-coverage": "^3.0.0",
     "@storybook/addon-docs": "^10.2.15",
     "@storybook/addon-onboarding": "^10.2.15",
     "@storybook/addon-vitest": "^10.2.15",

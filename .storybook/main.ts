@@ -10,15 +10,6 @@ const config: StorybookConfig = {
 "@storybook/addon-a11y",
     "@storybook/addon-docs",
     "@storybook/addon-onboarding",
-    {
-      name: '@storybook/addon-coverage',
-      options: {
-        istanbul: {
-          include: ['src/components/**'],
-          exclude: ['**/*.stories.*', '**/*.test.*', '**/index.ts'],
-        },
-      },
-    },
     "@storybook/addon-vitest",
   ],
   "framework": "@storybook/nextjs-vite",
