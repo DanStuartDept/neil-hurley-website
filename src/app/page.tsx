@@ -35,7 +35,12 @@ export default function HomePage() {
   return (
     <>
       <h1 className="sr-only">Neil Hurley Photography</h1>
-      <Hero image={homeData.hero.image} />
+      <Hero
+        image={homeData.hero.image}
+        name={homeData.hero.name}
+        tagline={homeData.hero.tagline}
+        specialties={homeData.hero.specialties}
+      />
 
       
       <section className="bg-background px-6 py-20">

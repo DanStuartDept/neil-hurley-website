@@ -3,7 +3,13 @@
     "image": {
       "src": "/images/food/70.jpg",
       "alt": "Neil Hurley Photography"
-    }
+    },
+    "name": "Neil Hurley",
+    "tagline": "Commercial photographer based in Dublin",
+    "specialties": [
+      { "label": "Food & Drink", "href": "/food" },
+      { "label": "Advertising & Product", "href": "/advertising" }
+    ]
   },
   "sections": [
     {
