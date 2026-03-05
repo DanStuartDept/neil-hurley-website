@@ -7,6 +7,7 @@ const meta: Meta<typeof GalleryGrid> = {
   parameters: {
     layout: 'padded',
   },
+  tags: ['autodocs'],
 };
 
 export default meta;

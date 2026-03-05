@@ -4,6 +4,7 @@ import { PageHeader } from './page-header';
 const meta: Meta<typeof PageHeader> = {
   title: 'Components/PageHeader',
   component: PageHeader,
+  tags: ['autodocs'],
 };
 
 export default meta;
