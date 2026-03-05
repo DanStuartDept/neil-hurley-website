@@ -97,6 +97,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: .vitest-reports
+          pattern: vitest-blob-*
           merge-multiple: true
       - name: Merge coverage reports
         run: pnpm vitest run --coverage --merge-reports=.vitest-reports
