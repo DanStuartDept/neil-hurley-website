@@ -78,6 +78,7 @@ export function Lightbox({
       className="fixed inset-0 z-100 bg-[rgba(26,24,21,0.85)] backdrop-blur-3xl flex items-center justify-center animate-fade-in"
     >
       <button
+        type="button"
         onClick={onClose}
         aria-label="Close lightbox"
         className="absolute top-6 right-6 text-card text-2xl font-body cursor-pointer hover:text-muted transition-colors duration-300 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(26,24,21,0.85)]"
@@ -86,6 +87,7 @@ export function Lightbox({
       </button>
 
       <button
+        type="button"
         onClick={handlePrev}
         aria-label="Previous image"
         className="absolute left-4 md:left-8 w-12 h-12 rounded-full bg-[rgba(247,245,242,0.1)] backdrop-blur-sm flex items-center justify-center text-card hover:bg-[rgba(247,245,242,0.2)] transition-colors duration-300 cursor-pointer z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(26,24,21,0.85)]"
@@ -117,6 +119,7 @@ export function Lightbox({
       </div>
 
       <button
+        type="button"
         onClick={handleNext}
         aria-label="Next image"
         className="absolute right-4 md:right-8 w-12 h-12 rounded-full bg-[rgba(247,245,242,0.1)] backdrop-blur-sm flex items-center justify-center text-card hover:bg-[rgba(247,245,242,0.2)] transition-colors duration-300 cursor-pointer z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(26,24,21,0.85)]"

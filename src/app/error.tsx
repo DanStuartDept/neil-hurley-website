@@ -13,8 +13,9 @@ export default function Error({
         An unexpected error occurred. Please try again.
       </p>
       <button
+        type="button"
         onClick={reset}
-        className="font-body text-xs uppercase tracking-[0.2em] text-accent hover:text-accent-hover transition-colors duration-300"
+        className="font-body text-xs uppercase tracking-[0.2em] text-accent hover:text-accent-hover transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
       >
         Try again
       </button>
