@@ -14,7 +14,7 @@ pnpm lint             # ESLint
 pnpm typecheck        # TypeScript type check
 pnpm format           # Prettier
 pnpm build            # Production build
-pnpm e2e              # Playwright E2E tests
+pnpm test:coverage    # Unit tests with v8 coverage
 ```
 
 To run a single test file: `pnpm vitest run --project unit src/components/button/button.test.tsx`
@@ -25,7 +25,7 @@ To run a single test file: `pnpm vitest run --project unit src/components/button
 
 **Data layer** — all content lives in `src/data/*.json` (no CMS/API). Pages import JSON directly.
 
-**Styling** — Tailwind CSS 4 with CSS-first configuration. Design tokens are defined in `src/styles/globals.css` using `@theme {}`. There is no `tailwind.config.js` — use CSS variables from `@theme` for colors and fonts. Never use inline styles or CSS modules.
+**Styling** — Tailwind CSS 4 with CSS-first configuration. Design tokens are defined in `src/styles/globals.css` using `@theme {}`. There is no `tailwind.config.js` — use CSS variables from `@theme` for colors and fonts. Never use inline styles or CSS modules. A custom `animate-fade-in` utility is defined there for entrance animations. Max content width is `max-w-[1280px]` (standard) or `max-w-[1440px]` (wide); always pair with `px-6`.
 
 **Shared types** — `src/components/types/index.ts` defines `ImageType`, `GalleryItemType`, `LinkType`, etc. Import from there rather than redefining.
 
@@ -34,6 +34,16 @@ To run a single test file: `pnpm vitest run --project unit src/components/button
 **Path alias** — `@/` maps to `src/`. Use it for all internal imports.
 
 **Site metadata** — `src/lib/site-config.ts` exports `siteConfig` (name, baseUrl, description). Use it in `metadata` exports instead of hardcoding strings.
+
+## Pages
+
+- `/` — homepage with Hero, Food preview (asymmetric, 5 items), Advertising preview (uniform, 3 items), Clients preview, ContactSection
+- `/food` — full Food & Drink gallery (uniform)
+- `/advertising` — full Advertising & Product gallery (uniform)
+- `/clients` — full client list
+- `/contact` — contact page
+
+All pages are server components that import JSON directly. The `GalleryGrid` component is a client component (it manages lightbox open state), so pages that include it still render as server components — Next.js handles the boundary automatically.
 
 ## Component Conventions
 
@@ -47,13 +57,14 @@ Test assertions use semantic queries (`getByRole`, `getByAltText`, `getByLabelTe
 
 Stories use `tags: ['autodocs']` and import from `storybook/test` for interaction tests.
 
-`GalleryGrid` accepts a `variant` prop: `"asymmetric"` (mixed sizes, used for featured sections) or `"uniform"` (equal grid).
+`GalleryGrid` accepts a `variant` prop: `"asymmetric"` (first item spans 2 cols + 2 rows, used for featured sections) or `"uniform"` (equal 3-col grid). It integrates `Lightbox` internally — no need to wire it separately.
+
+`MobileNav` is a client component (`'use client'`) that handles the hamburger menu toggle for small screens.
 
 ## Testing Stack
 
 - **Unit tests:** Vitest + jsdom + `@testing-library/react` (project: `unit`)
 - **Story tests:** Vitest + Playwright + Storybook vitest addon (project: `storybook`)
-- **E2E:** Playwright in `e2e/` (`pnpm e2e`)
 - **A11y:** Storybook a11y addon is set to `'error'` — a11y violations fail CI
 
 ## Branches & PRs
