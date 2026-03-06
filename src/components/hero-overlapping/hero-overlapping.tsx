@@ -26,6 +26,9 @@ interface HeroFrameProps {
   enterDelay: number;
   priority?: boolean;
   shouldAnimate: boolean;
+  showImages: boolean;
+  /** Tailwind delay class for the image fade-in, e.g. 'delay-0' */
+  imageDelayClass: string;
 }
 
 function HeroFrame({
@@ -35,6 +38,8 @@ function HeroFrame({
   enterDelay,
   priority = false,
   shouldAnimate,
+  showImages,
+  imageDelayClass,
 }: HeroFrameProps) {
   return (
     <motion.div
@@ -51,7 +56,7 @@ function HeroFrame({
         alt={image.alt}
         fill
         sizes="(max-width: 768px) 65vw, 52vw"
-        className="object-cover"
+        className={`object-cover transition-opacity duration-700 ${imageDelayClass} ${showImages ? 'opacity-100' : 'opacity-0'}`}
         priority={priority}
       />
     </motion.div>
@@ -110,9 +115,11 @@ export function HeroOverlapping({ name, imagePool }: HeroOverlappingProps) {
     imagePool[1],
     imagePool[2],
   ]);
+  const [showImages, setShowImages] = useState(false);
 
   useEffect(() => {
     setFrames(pickThree(imagePool));
+    setShowImages(true);
     // imagePool is stable from the server component — intentionally omitted from deps
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -174,6 +181,8 @@ export function HeroOverlapping({ name, imagePool }: HeroOverlappingProps) {
         motionStyle={shouldAnimate ? { x: backMouseX, y: backFinalY } : {}}
         enterDelay={0}
         shouldAnimate={shouldAnimate}
+        showImages={showImages}
+        imageDelayClass="delay-0"
       />
 
       {/* Accent frame — small, top-right, hidden on mobile */}
@@ -183,6 +192,8 @@ export function HeroOverlapping({ name, imagePool }: HeroOverlappingProps) {
         motionStyle={shouldAnimate ? { x: accentMouseX, y: accentFinalY } : {}}
         enterDelay={0.8}
         shouldAnimate={shouldAnimate}
+        showImages={showImages}
+        imageDelayClass="delay-150"
       />
 
       {/* Front frame — smaller, left side, highest z */}
@@ -193,6 +204,8 @@ export function HeroOverlapping({ name, imagePool }: HeroOverlappingProps) {
         enterDelay={0.2}
         priority
         shouldAnimate={shouldAnimate}
+        showImages={showImages}
+        imageDelayClass="delay-300"
       />
 
       {/* Name text — bottom-left */}
