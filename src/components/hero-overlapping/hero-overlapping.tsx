@@ -18,6 +18,8 @@ function pickThree(pool: ImageType[]): [ImageType, ImageType, ImageType] {
   return [shuffled[0], shuffled[1], shuffled[2]];
 }
 
+type ImageState = 'hidden' | 'ready' | 'visible';
+
 interface HeroFrameProps {
   image: ImageType;
   /** Tailwind classes for size/position/z-index */
@@ -26,8 +28,8 @@ interface HeroFrameProps {
   enterDelay: number;
   priority?: boolean;
   shouldAnimate: boolean;
-  showImages: boolean;
-  /** Tailwind delay class for the image fade-in, e.g. 'delay-0' */
+  imageState: ImageState;
+  /** Tailwind delay class for the staggered image fade-in, e.g. 'delay-0' */
   imageDelayClass: string;
 }
 
@@ -38,7 +40,7 @@ function HeroFrame({
   enterDelay,
   priority = false,
   shouldAnimate,
-  showImages,
+  imageState,
   imageDelayClass,
 }: HeroFrameProps) {
   return (
@@ -51,14 +53,16 @@ function HeroFrame({
     >
       {/* Decorative inset border */}
       <div className="absolute inset-0 border border-white/15 z-10 pointer-events-none rounded-sm" />
-      <Image
-        src={image.src}
-        alt={image.alt}
-        fill
-        sizes="(max-width: 768px) 65vw, 52vw"
-        className={`object-cover transition-opacity duration-700 ${imageDelayClass} ${showImages ? 'opacity-100' : 'opacity-0'}`}
-        priority={priority}
-      />
+      {imageState !== 'hidden' && (
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          sizes="(max-width: 768px) 65vw, 52vw"
+          className={`object-cover transition-opacity duration-700 ${imageDelayClass} ${imageState === 'visible' ? 'opacity-100' : 'opacity-0'}`}
+          priority={priority}
+        />
+      )}
     </motion.div>
   );
 }
@@ -109,17 +113,18 @@ export function HeroOverlapping({ name, imagePool }: HeroOverlappingProps) {
   const shouldAnimate = !useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Deterministic initial state for SSR — randomised after hydration in useEffect
+  // No images rendered on SSR — randomised and faded in on client only
   const [frames, setFrames] = useState<[ImageType, ImageType, ImageType]>([
     imagePool[0],
     imagePool[1],
     imagePool[2],
   ]);
-  const [showImages, setShowImages] = useState(false);
+  const [imageState, setImageState] = useState<ImageState>('hidden');
 
   useEffect(() => {
     setFrames(pickThree(imagePool));
-    setShowImages(true);
+    setImageState('ready'); // mounts <Image> tags into DOM at opacity-0
+    requestAnimationFrame(() => setImageState('visible')); // triggers CSS transition
     // imagePool is stable from the server component — intentionally omitted from deps
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -181,7 +186,7 @@ export function HeroOverlapping({ name, imagePool }: HeroOverlappingProps) {
         motionStyle={shouldAnimate ? { x: backMouseX, y: backFinalY } : {}}
         enterDelay={0}
         shouldAnimate={shouldAnimate}
-        showImages={showImages}
+        imageState={imageState}
         imageDelayClass="delay-0"
       />
 
@@ -192,7 +197,7 @@ export function HeroOverlapping({ name, imagePool }: HeroOverlappingProps) {
         motionStyle={shouldAnimate ? { x: accentMouseX, y: accentFinalY } : {}}
         enterDelay={0.8}
         shouldAnimate={shouldAnimate}
-        showImages={showImages}
+        imageState={imageState}
         imageDelayClass="delay-150"
       />
 
@@ -204,7 +209,7 @@ export function HeroOverlapping({ name, imagePool }: HeroOverlappingProps) {
         enterDelay={0.2}
         priority
         shouldAnimate={shouldAnimate}
-        showImages={showImages}
+        imageState={imageState}
         imageDelayClass="delay-300"
       />
 

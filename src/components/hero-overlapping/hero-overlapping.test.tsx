@@ -119,6 +119,14 @@ describe('HeroOverlapping', () => {
     expect(section).toBeInTheDocument();
   });
 
+  it('renders images with opacity-100 after requestAnimationFrame fires', () => {
+    vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => { cb(0); return 0; });
+    render(<HeroOverlapping name="Neil Hurley" imagePool={imagePool} />);
+    const images = screen.getAllByRole('img');
+    images.forEach((img) => expect(img.className).toContain('opacity-100'));
+    vi.unstubAllGlobals();
+  });
+
   it('does not update mouse values when reduced motion is preferred', () => {
     mockUseReducedMotion.mockReturnValue(true);
     mockMouseXSet.mockClear();
